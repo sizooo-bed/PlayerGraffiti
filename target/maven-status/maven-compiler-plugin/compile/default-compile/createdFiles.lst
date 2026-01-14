@@ -1,0 +1,7 @@
+fr\sizooo\playergraffiti\Main.class
+fr\sizooo\playergraffiti\managers\DataManager.class
+fr\sizooo\playergraffiti\managers\SignManager$1.class
+fr\sizooo\playergraffiti\managers\SignManager.class
+fr\sizooo\playergraffiti\listeners\SignClickListener.class
+fr\sizooo\playergraffiti\managers\PlayerManager.class
+fr\sizooo\playergraffiti\commands\GraffitiCommand.class
