@@ -1,0 +1,11 @@
+name: PlayerGraffiti
+version: '1.0.0'
+main: fr.sizooo.playergraffiti.Main
+api-version: '1.21'
+description: Permet de graffiter des messages sur les panneaux
+author: Sizooo
+
+commands:
+  graffiti:
+    description: Écris un message sur un panneau
+    usage: "§cUsage: /graffiti <message>"
