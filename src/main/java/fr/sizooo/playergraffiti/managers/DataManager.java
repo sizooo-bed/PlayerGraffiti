@@ -40,7 +40,7 @@ public class DataManager {
     }
     
     public void saveActiveGraffiti(Map<Location, String> graffitiData) {
-        dataConfig.set("active_graffiti", null); // Clear old data
+        dataConfig.set("active_graffiti", null);
         
         int index = 0;
         for (Map.Entry<Location, String> entry : graffitiData.entrySet()) {

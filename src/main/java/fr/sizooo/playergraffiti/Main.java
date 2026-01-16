@@ -17,18 +17,15 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         getLogger().info("§a🎉 PlayerGraffiti v2.0 enabled!");
 
-        // Initialize managers
         playerManager = new PlayerManager();
         signManager = new SignManager(this);
 
-        // Register main command with tab completer
         PluginCommand graffitiCmd = this.getCommand("graffiti");
         if (graffitiCmd != null) {
             graffitiCmd.setExecutor(new GraffitiCommand(this));
             graffitiCmd.setTabCompleter(new GraffitiCommand(this));
         }
 
-        // Register event listener
         getServer().getPluginManager().registerEvents(new SignClickListener(this), this);
 
         getLogger().info("§aAll systems operational!");

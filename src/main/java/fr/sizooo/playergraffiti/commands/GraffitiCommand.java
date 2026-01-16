@@ -34,7 +34,6 @@ public class GraffitiCommand implements CommandExecutor, TabCompleter {
         Player player = (Player) sender;
 
         if (args.length == 0) {
-            // Show help
             showHelp(player);
             return true;
         }
@@ -76,7 +75,6 @@ public class GraffitiCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        // Combine arguments into message
         StringBuilder message = new StringBuilder();
         for (int i = 1; i < args.length; i++) {
             message.append(args[i]);
@@ -84,14 +82,11 @@ public class GraffitiCommand implements CommandExecutor, TabCompleter {
                 message.append(" ");
         }
 
-        // Strip color codes from message (optional, prevents color abuse)
         String finalMessage = ChatColor.stripColor(message.toString());
 
-        // Inform player about limits
         player.sendMessage("§7Note: Regular signs: §e30 §7chars max (2 lines of 15)");
         player.sendMessage("§7Hanging signs: §e20 §7chars max (2 lines of 10)");
 
-        // Store message
         plugin.getPlayerManager().setPlayerMessage(player, finalMessage);
 
         player.sendMessage("§a✓ Graffiti message set: §f" + finalMessage);
@@ -167,10 +162,8 @@ public class GraffitiCommand implements CommandExecutor, TabCompleter {
         List<String> completions = new ArrayList<>();
 
         if (args.length == 1) {
-            // Subcommands
             List<String> subCommands = Arrays.asList("set", "cancel", "list");
 
-            // Add admin commands if has permission
             if (sender.hasPermission("playergraffiti.admin")) {
                 subCommands = Arrays.asList("set", "cancel", "list", "clear");
             }
